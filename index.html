@@ -103,18 +103,42 @@ h1, h2, h3, h4. h5, h6, .serif {
     border-color: #fef8fb;
 }
 
+.border-top, .border-bottom {
+    height: 12px;
+    left: 12px;
+    right: 12px;
+}
+.border-left, .border-right {
+    bottom: 12px;
+    top: 12px;
+    width: 12px;
+}
+
+@media all and (min-with: 480px) {
+    .border-top, .border-bottom {
+        height: 24px;
+        left: 24px; 
+        right: 24px;
+    }
+    .border-left, .border-right {
+        bottom: 24px;
+        top: 24px; 
+        width: 24px;
+    }
+}
+
 </style>
 
 </head>
 
 <body class="bg-blush-pink serif">
 
-    <div class="h1 fixed top-0 bg-darker-pink z-2" style="height: 24px; background: #fef8fb; border-bottom: 1px solid #72007c; left: 24px; right: 24px;"></div> 
-    <div class="h1 fixed bottom-0 bg-darker-pink z-2" style="height: 24px; background: #fef8fb; border-top: 1px solid #72007c; left: 24px; right: 24px;"></div> 
-    <div class="w1 fixed left-0 bg-darker-pink z-2" style="width: 24px; background: #fef8fb; border-right: 1px solid #72007c; top: 24px; bottom: 24px;"></div> 
-    <div class="w1 fixed right-0 bg-darker-pink z-2" style="width: 24px; background: #fef8fb; border-left: 1px solid #72007c; top: 24px; bottom: 24px;"></div> 
+    <div class="border-top h1 fixed top-0 bg-darker-pink z-2" style="background: #fef8fb; border-bottom: 1px solid #72007c;"></div> 
+    <div class="border-bottom h1 fixed bottom-0 bg-darker-pink z-2" style="background: #fef8fb; border-top: 1px solid #72007c;"></div> 
+    <div class="border-left w1 fixed left-0 bg-darker-pink z-2" style="background: #fef8fb; border-right: 1px solid #72007c;"></div> 
+    <div class="border-right w1 fixed right-0 bg-darker-pink z-2" style="background: #fef8fb; border-left: 1px solid #72007c;"></div> 
     
-    <header class="fixed top-0 left-0 pa4 ma3 relative z-1 w-100">
+    <header class="fixed-ns top-0 left-0 pa4 ma3 relative z-1 w-100-ns tc tl-ns">
         <h1 class="f4">
             <a href="/" class="link dim darker-pink">
                 CO Psychotherapy
@@ -122,18 +146,16 @@ h1, h2, h3, h4. h5, h6, .serif {
         </h1>
     </header>
 
-    <div class="measure center mt6">
+    <div class="measure center mt6-ns">
 
     <section class="lh-copy">
 
-        <div class="flex-ns justify-around mb3 bg-white pa4 br4">
-            <div class="w-20-ns lh-title">
-                <div>
-                    <img src="catherine-ouriach-copsychotherapy.png" class="mw-100" alt="Catherine Ouriach">
-                </div>
+        <div class="flex-ns justify-around mb3 bg-white pa4 br4 mh4 mh0-ns">
+            <div class="w-70 w-20-ns lh-title mb3 mb0-ns center">
+                <img src="catherine-ouriach-copsychotherapy.png" class="mw-100" alt="Catherine Ouriach">
             </div>  
 
-            <div class="w-80-ns pl4">
+            <div class="w-80-ns pl4-ns">
                 <h2 class="f3 serif darker-pink b">
                     Catherine Ouriach
                 </h2>          
@@ -141,7 +163,7 @@ h1, h2, h3, h4. h5, h6, .serif {
                     Catherine is a qualified Psychotherapist with over 17 years experience working in mental health.
                 </p> 
                                                
-                <a href="mailto:Catherinepsychotherapy@gmail.com" class="bg-blush-pink ttu f5 b link dim darker-pink pa3 br1 sans-serif">
+                <a href="mailto:Catherinepsychotherapy@gmail.com" class="db tc bg-blush-pink ttu f5 b link dim darker-pink pa3 br1 sans-serif">
                     Get in touch
                 </a>
             </div>
@@ -149,7 +171,7 @@ h1, h2, h3, h4. h5, h6, .serif {
 
     </section>
 
-    <div class="mb4 bg-white pa4 mb3 bg-white pa4 br4">
+    <div class="mb4 bg-white pa4 mb3 bg-white pa4 br4 mh4 mh0-ns">
         <div class="lh-title mb4">
             <h3 class="darker-pink ttu f5 tracked mb3 sans-serif b bb bw1 pb3">    
                 Experience
@@ -180,7 +202,7 @@ h1, h2, h3, h4. h5, h6, .serif {
         </div>
     </div>
 
-    <div class="mb3 bg-white pa4 br4">
+    <div class="mb3 bg-white pa4 br4 mh4 mh0-ns">
         <div class="lh-title mb4">
             <h3 class="darker-pink ttu f5 tracked mb3 sans-serif b bb bw1 pb3">    
                 Education and interests
@@ -196,7 +218,7 @@ h1, h2, h3, h4. h5, h6, .serif {
         </div>
     </div>
 
-    <div class="mb3 bg-white pa4 br4">
+    <div class="mb3 bg-white pa4 br4 mh4 mh0-ns">
         <div class="lh-title mb4">
             <h3 class="darker-pink ttu f5 tracked mb3 sans-serif b bb bw1 pb3">     
                 Style
@@ -209,7 +231,7 @@ h1, h2, h3, h4. h5, h6, .serif {
         </div>
     </div>
 
-    <div class="mb4 bg-white pa4 br4">
+    <div class="mb4 bg-white pa4 br4 mh4 mh0-ns">
         <div class="lh-title mb4">
             <h3 class="darker-pink ttu f5 tracked mb3 sans-serif b bb bw1 pb3">     
                 Services
@@ -235,7 +257,7 @@ h1, h2, h3, h4. h5, h6, .serif {
     </div>
 
 
-    <footer class="mb6 tc pa3 pv4 br2 ba bw1 b--darker-pink">
+    <footer class="mb6 tc pa3 pv4 br2 ba bw1 b--darker-pink mh4 mh0-ns">
         <p class="darker-pink">
             Would you like to arrange a session? Please <a href="mailto:Catherinepsychotherapy@gmail.com" class="b dim darker-pink">get in touch</a>.
         </p>
