@@ -22,7 +22,8 @@
     <meta name="twitter:site" content="@disco_lu">
 
     <link rel="stylesheet" href="tachyons.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Martel:400,900|Poppins:400,900" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
     
 
 <style>
@@ -56,6 +57,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
@@ -77,81 +79,166 @@ a {
     color: #3b4040;
 }
 
+h1, h2, h3, h4. h5, h6, .serif {
+    font-family: 'Alice', serif;
+}
 
+.bg-blush-pink {
+    background-color: #fef8fb;
+}
+
+.bg-darker-pink {
+    background-color: #72007c;
+}
+
+.darker-pink {
+    color: #72007c;
+}
+
+.b--darker-pink {
+    border-color: #72007c;    
+}
+
+.b--blush-pink {
+    border-color: #fef8fb;
+}
 
 </style>
 
 </head>
 
-<body>
+<body class="bg-blush-pink serif">
 
-    <div class="h1 fixed top-1 left-1 right-1 bg-gold" style="height: 2px;"></div> 
-    <div class="w1 fixed bottom-1 top-1 left-1 bg-gold" style="height: 2px;"></div> 
+    <div class="h1 fixed top-0 bg-darker-pink z-2" style="height: 24px; background: #fef8fb; border-bottom: 1px solid #72007c; left: 24px; right: 24px;"></div> 
+    <div class="h1 fixed bottom-0 bg-darker-pink z-2" style="height: 24px; background: #fef8fb; border-top: 1px solid #72007c; left: 24px; right: 24px;"></div> 
+    <div class="w1 fixed left-0 bg-darker-pink z-2" style="width: 24px; background: #fef8fb; border-right: 1px solid #72007c; top: 24px; bottom: 24px;"></div> 
+    <div class="w1 fixed right-0 bg-darker-pink z-2" style="width: 24px; background: #fef8fb; border-left: 1px solid #72007c; top: 24px; bottom: 24px;"></div> 
     
-    <header>
-        <h1>CO Psychotherapy</h1>
+    <header class="fixed top-0 left-0 pa4 ma3 relative z-1 w-100">
+        <h1 class="f4">
+            <a href="/" class="link dim darker-pink">
+                CO Psychotherapy
+            </a>
+        </h1>
     </header>
 
-    <section>
-        <h2 class="f2 mb2">
-            Catherine Ouriach
-        </h2>
-        <p class="mb3">
-            Catherine is a qualified Psychotherapist with over 17 years experience working in mental health.
-        </p>
-        <p class="mb3">
-            Following her undergraduate degree in Psychology (BSc Hons), she completed a Post Graduate Diploma in Cognitive Behavioural Therapy at the Institute of Psychiatry in 2010. She has worked in a variety of settings including the NHS, charity, the private health sector and has her own private practice. She has a special interest in Insomnia and is about to start a position in the Insomnia clinic at the internationally renowned Royal Hospital for Integrative Medicine based in Queens Square, London.
-        </p>
+    <div class="measure center mt6">
+
+    <section class="lh-copy">
+
+        <div class="flex-ns justify-around mb3 bg-white pa4 br4">
+            <div class="w-20-ns lh-title">
+                <div>
+                    <img src="catherine-ouriach-copsychotherapy.png" class="mw-100" alt="Catherine Ouriach">
+                </div>
+            </div>  
+
+            <div class="w-80-ns pl4">
+                <h2 class="f3 serif darker-pink b">
+                    Catherine Ouriach
+                </h2>          
+                <p class="mb4 black-70 f4 sans-serif">
+                    Catherine is a qualified Psychotherapist with over 17 years experience working in mental health.
+                </p> 
+                                               
+                <a href="mailto:Catherinepsychotherapy@gmail.com" class="bg-blush-pink ttu f5 b link dim darker-pink pa3 br1 sans-serif">
+                    Get in touch
+                </a>
+            </div>
+        </div>
+
     </section>
 
-    <h3>    
-        Experience and interests
-    </h3>
-    <ul class="flex justify-between list">
-        <li class="pa2 bg-light-green br1 ba bw1 b--green">Insomnia</li>
-        <li class="pa2 bg-light-green br1 ba bw1 b--green">Depression</li>
-        <li class="pa2 bg-light-green br1 ba bw1 b--green">Anxiety</li>
-        <li class="pa2 bg-light-green br1 ba bw1 b--green">Post Traumatic Stress</li>
-        <li class="pa2 bg-light-green br1 ba bw1 b--green">Obsessive Compulsive Disorder</li>
-    </ul>
+    <div class="mb4 bg-white pa4 mb3 bg-white pa4 br4">
+        <div class="lh-title mb4">
+            <h3 class="darker-pink ttu f5 tracked mb3 sans-serif b bb bw1 pb3">    
+                Experience
+            </h3>
+        </div>
+        <div>
+            <ul class="list flex flex-wrap black-80">
+                <li class="pa2 f4 mb2 flex items-center">
+                    <span class="w1 h1 br4 bg-darker-pink mr2" style="height: 8px; width: 8px;">&nbsp;</span> Insomnia
+                </li>
+                <li class="pa2 f4 mb2 flex items-center">
+                    <span class="w1 h1 br4 bg-darker-pink mr2" style="height: 8px; width: 8px;">&nbsp;</span>
+                    Depression
+                </li>
+                <li class="pa2 f4 mb2 flex items-center">
+                    <span class="w1 h1 br4 bg-darker-pink mr2" style="height: 8px; width: 8px;">&nbsp;</span>
+                    Anxiety
+                </li>
+                <li class="pa2 f4 mb2 flex items-center">
+                    <span class="w1 h1 br4 bg-darker-pink mr2" style="height: 8px; width: 8px;">&nbsp;</span>
+                    Post Traumatic Stress
+                </li>
+                <li class="pa2 f4 flex items-center">
+                    <span class="w1 h1 br4 bg-darker-pink mr2" style="height: 8px; width: 8px;">&nbsp;</span>
+                    Obsessive Compulsive Disorder
+                </li>
+            </ul>
+        </div>
+    </div>
 
-    <p>
-        Catherine is an empathic practitioner. She provides a safe and confidential space for clients online or face to face in North London to express concerning thoughts and feelings, gain deeper insight into difficulties and to develop positive strategies to move forward.
-    </p>
+    <div class="mb3 bg-white pa4 br4">
+        <div class="lh-title mb4">
+            <h3 class="darker-pink ttu f5 tracked mb3 sans-serif b bb bw1 pb3">    
+                Education and interests
+            </h3>
+        </div>
+        <div class="f4 lh-copy black-80 mb4">
+            <p class="mb3">
+                Following her undergraduate degree in Psychology (BSc Hons), she completed a Post Graduate Diploma in Cognitive Behavioural Therapy at the Institute of Psychiatry in 2010.
+            </p>     
+            <p>
+                She has worked in a variety of settings including the NHS, charity, the private health sector and has her own private practice. She has a special interest in Insomnia and is about to start a position in the Insomnia clinic at the internationally renowned Royal Hospital for Integrative Medicine based in Queens Square, London.
+            </p>
+        </div>
+    </div>
 
-    <p>
-        <a href="mailto:Catherinepsychotherapy@gmail.com">Get in touch</a>
-    </p>
+    <div class="mb3 bg-white pa4 br4">
+        <div class="lh-title mb4">
+            <h3 class="darker-pink ttu f5 tracked mb3 sans-serif b bb bw1 pb3">     
+                Style
+            </h3>
+        </div>
+        <div class="f4 lh-copy black-80">        
+            <p>
+                Catherine is an empathic practitioner. She provides a safe and confidential space for clients online or face to face in North London to express concerning thoughts and feelings, gain deeper insight into difficulties and to develop positive strategies to move forward.
+            </p>
+        </div>
+    </div>
 
-    <h3>
-        Services
-    </h3>
-    <ul>
-        <li>
-            Individual face to face therapy online or in North London
-        </li>
-        <li>
-            Workshops, Webinars and Seminars on a variety of topics such as Insomnia, Mental Health awareness, Resilience, Stress
-        </li>
-    </ul>
+    <div class="mb4 bg-white pa4 br4">
+        <div class="lh-title mb4">
+            <h3 class="darker-pink ttu f5 tracked mb3 sans-serif b bb bw1 pb3">     
+                Services
+            </h3>
+        </div>
+        <div class="f4 lh-copy black-80">  
+            <ul>
+                <li class="pa2 f4 flex items-center">
+                    <span class="w1 h1 br4 bg-darker-pink mr2" style="height: 8px; width: 8px;">&nbsp;</span>
+                    Individual face to face therapy online or in North London
+                </li>
+                <li class="pa2 f4 flex items-center">
+                    <span class="w1 h1 br4 bg-darker-pink mr2" style="height: 8px; width: 8px;">&nbsp;</span>
+                    Workshops, Webinars and Seminars
+                </li>
+                <li class="pa2 f4 flex items-center">
+                    <span class="w1 h1 br4 bg-darker-pink mr2" style="height: 8px; width: 8px;">&nbsp;</span>
+                    Insomnia, Mental Health awareness, Resilience, and Stress treatments
+                </li>            
+            </ul>
+        </div>
 
-https://www.theinsomniaclinic.co.uk/corporate-courses (something like this?)
-
-Examples of pages
-http://www.lucyblair.co.uk/
-http://www.michellestrange.co.uk/
-
-Grey, blush pink and green - I like banana leaf print
+    </div>
 
 
-    <footer>
-        <ul class="list f3 [ flex flex-wrap flex-column items-center justify-center ]">
-            <li>
-                <a href="" class="b db no-underline">
-                    Content
-                </a>      
-            </li>
-        </ul>
+    <footer class="mb6 tc pa3 pv4 br2 ba bw1 b--darker-pink">
+        <p class="darker-pink">
+            Would you like to arrange a session? Please <a href="mailto:Catherinepsychotherapy@gmail.com" class="b dim darker-pink">get in touch</a>.
+        </p>
     </footer>     
 
         <!-- Global site tag (gtag.js) - Google Analytics
