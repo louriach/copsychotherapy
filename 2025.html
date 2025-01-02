@@ -89,13 +89,14 @@ h1, h2, h3, h4, h5, h6, .serif {
     /* Padding */
     --padding-card: 40px;
     --padding-card-inner: 20px;
+    --padding-button: 16px 20px;
 
     /* Widths */
     --container-width: 800px;
 
     /* Colors */
     --color-yellow-soft: #F8F0E1;
-    --color-yellow-border: #FFFAF0;
+    --color-yellow-bright: #FFFAF0;
     --color-yellow-strong: #2B1D05;
     --color-text: #2B1D05;
     --color-text-secondary: rgba(43, 29, 5, 0.8);
@@ -123,11 +124,12 @@ h1, h2, h3, h4, h5, h6, .serif {
     --family-title: 'Alice', serif;
     --weight-title: 400;
     --size-title: 3rem;
-    --line-height-title: 110%;
+    --line-height-title: 100%;
     --family-body: 'DM Sans', sans-serif;
     --weight-body: 400;
     --size-body: 1.25rem;
-    --line-height-body: 130%;
+    --line-height-body: 140%;
+    --letter-spacing-body: .2px;
     --size-small: .9rem;
     --size-menu: 14px;
 }
@@ -144,10 +146,15 @@ body {
 
 p { 
     color: var(--color-text-secondary);
+    letter-spacing: var(--letter-spacing-body);
 }
 
 .strong {
     font-weight: 700;
+}
+
+.mt-1 {
+    margin-top: var(--space-3);
 }
 
 .text {
@@ -173,11 +180,27 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: var(--space-2);
+    gap: var(--space-4);
     height: 80vh;
 }
 
 .hero-grid {
+    /* box-shadow: 0px 0px 0px 2px #F8F0E1, 
+    0px 0px 0px 8px rgba(43, 29, 5, 0.02), 
+    0px 0px 0px 16px #F8F0E1, 
+    0px 0px 0px 24px rgba(43, 29, 5, 0.02), 
+    0px 0px 0px 32px #F8F0E1, */
+    /* box-shadow: 0px 0px 0px 20px rgba(43, 29, 5, 0.02);
+;
+box-shadow: 0px 0px 0px 20px rgba(43, 29, 5, 0.03), 0px 0px 0px 19px #FFFFFF;
+
+
+box-shadow: 0px 0px 0px 16px rgba(43, 29, 5, 0.03), 0px 0px 0px 18px #FFFAF0, 0px 0px 0px 24px #F8F0E1; */
+
+/* background: #FFFAF0;
+padding: 4px; */
+
+    border-radius: var(--radius-card);
     display: grid;
     gap: var(--space-2);
     grid-template-columns: 240px 3fr;
@@ -186,17 +209,28 @@ p {
 
 .header {
     align-items: center;
-    background: var(--color-yellow-soft);
-    border: 1px solid var(--color-yellow-border);
+    background: var(--color-yellow-bright);
+    border: 2px solid white;
     border-radius: var(--radius-card);
-    box-shadow: var(--shadow-card);    
-    color: var(--color-text);
+    box-shadow: var(--shadow-card);
     display: flex;
     font-size: var(--size-menu);
     justify-content: center;
+    margin: 0;
     padding: 16px 24px;
-    position: sticky;
+    z-index: 1;
 }
+
+.header.scrolled {
+    left: 50%;
+    position: fixed;
+    top: var(--space-2);
+    transform: translateX(-50%);
+}
+
+
+
+
 
 .header ul {
     align-items: center;
@@ -234,8 +268,8 @@ p {
 }
 
 .card {
-    background: var(--color-yellow-soft);
-    border: 1px solid var(--color-yellow-border);
+    background: var(--color-yellow-bright);
+    border: 2px solid white;
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-card);
     padding: var(--padding-card);
@@ -253,6 +287,26 @@ p {
     width: 100%;
 }
 
+.card-with-image {
+    align-items: center;
+    display: grid;
+    flex-direction: column-reverse;
+    grid-template-columns: 1fr 240px;
+    grid-template-rows: 1fr;
+    grid-column-gap: var(--space-4);
+}
+
+.card-with-image .card-image {
+    order: 1;
+}
+
+.card-with-image .body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    order: -1;
+}
+
 .card-title {
     color: var(--color-yellow-strong);    
     font-family: var(--family-title);
@@ -266,6 +320,18 @@ p {
     gap: var(--space-2);
 }
 
+.card-image {
+    aspect-ratio: 1;
+    box-shadow: 0px 0px 0px 2px #F8F0E1, 0px 0px 0px 4px #2B1D05;
+    border-radius: 8px;
+    transform: rotate(-2deg);
+    display: flex; 
+}
+
+.card-image img {
+    border-radius: 8px;
+}
+
 .title {
     display: flex;
     flex-direction: column;
@@ -276,8 +342,7 @@ p {
     align-self: flex-start;
     border-radius: var(--radius-card);
     color: var(--color-foreground-button);
-    flex: none;
-    padding: 16px 20px;
+    padding: var(--padding-button);
     background: var(--color-background-button);
     box-shadow: var(--shadow-button);
     text-decoration: none;
@@ -290,15 +355,15 @@ p {
 }
 .pill-list {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: var(--space-1);
 }
 
 .pill {
     align-self: flex-start;    
-    background: var(--color-yellow-soft);
-    border: 1px solid var(--color-yellow-border);
+    background: var(--color-yellow-bright);
     border-radius: var(--radius-pill);
+    color: var(--color-text-secondary);
     display: flex;
     padding: 6px 8px;
 }
@@ -317,7 +382,7 @@ p {
                 <div class="card card-header">
                     <div>
                         <img src="unsplash.png" class="avatar" alt="Catherine Ouriach">
-                        <h1 class="text strong">Jenna Byrne</h1>
+                        <h1 class="text strong">Catherine Ouriach</h1>
                         <p>Sleep therapist</p>
                         <p class="text-small">BABCP accredited</p>
                     </div>
@@ -375,43 +440,79 @@ p {
             </header>
         </div>
 
-        <div class="card">
-            <div class="title">
+        <div class="card card-with-image">
+            <div class="card-image">
+                <img src="image-treatments.png" alt="" />
+            </div>
+            <div class="body">
                 <h1 class="card-title">
                     Treatments
                 </h1>
                 <p>
-                    I am a BABCP accredited Cognitive Behavioural Therapist with a specialist interest in sleep disorders. I offer individual and group evidence based therapy for adults experiencing a variety of sleep disorders. I work in the Sleep and Behavioural Sleep Medicine Department at University College London Hospitals.
+                    I am a BABCP accredited Cognitive Behavioural Therapist with a specialist interest in sleep disorders.
                 </p>
+                <p>
+                    I offer individual and group evidence based therapy for adults experiencing a variety of sleep disorders.
+                </p> 
+                <p>
+                    I work in the Sleep and Behavioural Sleep Medicine Department at University College London Hospitals.
+                </p>
+                <div class="mt-1">
+                    <a class="button-link" href="#">See all treatments</a>
+                </div>
             </div>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="title">
-                        <h1 class="card-title">
-                            For Insomnia
-                        </h1>
-                    </div>
-                    <div class="pill-list">
-                        <span class="pill">Cognitive Behavioural Therapy (CBTi)</span>
-                        <span class="pill">Mindfulness Based Therapy (MBTi)</span>
-                    </div>
-                </div>   
-                <div class="card">
-                    <div class="title">
-                        <h1 class="card-title">
-                            For Nightmares
-                        </h1>
-                        <div class="pill-list">
-                            <span class="pill">Imagery Rehearsal Therapy (IRT)</span>
-                        </div>
-                    </div>
-                </div>                              
+        </div>
+        
+        <div class="card card-with-image">
+            <div class="card-image">
+                <img src="image-sleep-therapy.png" alt="" />
             </div>
-            <a class="button-link" href="#">See all treatments</a>
+            <div class="body">
+                <h1 class="card-title">
+                    Sleep issues
+                </h1>
+                <p>
+                    A qualified Psychotherapist with over 17 years experience working in mental health, I specialise in:
+                </p>
+                <div class="pill-list">
+                    <span class="pill">Insomnia</span>
+                    <span class="pill">Nightmares</span>
+                    <span class="pill">Sleep paralysis</span>
+                    <span class="pill">Perimenopause</span>
+                    <span class="pill">Menopause</span>
+                    <span class="pill">Sleep issues in women</span>
+                    <span class="pill">Non-rem Parasomnias</span>
+                </div>
+                <div class="mt-1">
+                    <a class="button-link" href="#">Read more about sleep issues</a>
+                </div>
+            </div>
         </div>        
 
         
-
+        <div class="card-grid">
+            <div class="card">
+                <div class="title">
+                    <h1 class="card-title">
+                        For Insomnia
+                    </h1>
+                </div>
+                <div class="pill-list">
+                    <span class="pill">Cognitive Behavioural Therapy (CBTi)</span>
+                    <span class="pill">Mindfulness Based Therapy (MBTi)</span>
+                </div>
+            </div>   
+            <div class="card">
+                <div class="title">
+                    <h1 class="card-title">
+                        For Nightmares
+                    </h1>
+                    <div class="pill-list">
+                        <span class="pill">Imagery Rehearsal Therapy (IRT)</span>
+                    </div>
+                </div>
+            </div>                              
+        </div>
             <footer class="mb6 tc pa3 pv4 br2 ba bw1 b--darker-pink mh4 mh0-ns lh-copy">
                 <p class="darker-pink f4">
                     Would you like to arrange a session? Please get in touch via <a href="mailto:Catherinepsychotherapy@gmail.com" class="b dim darker-pink">catherinepsychotherapy@gmail.com</a>.
@@ -430,5 +531,32 @@ p {
 
   gtag('config', 'UA-164717998-1');
 </script>
+
+<script>
+    let scrollpos = window.scrollY
+    const header = document.querySelector("header")
+    // const header_height = header.offsetHeight
+    const scrollPosition = '500'
+  
+    const add_class_on_scroll = () => header.classList.add("scrolled")
+    const remove_class_on_scroll = () => header.classList.remove("scrolled")
+  
+    window.addEventListener('scroll', function() { 
+      scrollpos = window.scrollY;
+  
+      if (scrollpos >= scrollPosition) { add_class_on_scroll() }
+      else { remove_class_on_scroll() }
+    })
+
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+    if (window.scrollpos > sticky) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+    }  
+  </script>
 
 </body>
