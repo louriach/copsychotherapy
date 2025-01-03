@@ -71,8 +71,8 @@ body, html {
     --purple-weak: #FDE8FF;
 
     /* Padding */
-    --padding-card: 40px;
-    --padding-card-inner: 20px;
+    --padding-card: 24px;
+    --padding-card-inner: 16px;
     --padding-button: 16px 20px;
 
     /* Widths */
@@ -84,38 +84,56 @@ body, html {
     --color-yellow-strong: #2B1D05;
     --color-text: #2B1D05;
     --color-text-secondary: rgba(43, 29, 5, 0.8);
-    --color-background-button: var(--purple-strong);
-    --color-foreground-button: var(--purple-weak);
+    --color-background-button-primary: var(--purple-strong);
+    --color-foreground-button-primary: var(--purple-weak);
+    --color-background-button-alt: var(--color-text);
+    --color-foreground-button-alt: var(--color-yellow-soft);
 
     /* Radius */
     --radius-card: 20px;
     --radius-pill: 8px;
 
     /* Grid */
-    --space-grid: 32px;
+    --space-grid: 20px;
     --space-1: 8px;
     --space-2: 16px;
-    --space-3: 32px;
-    --space-4: 48px;
-    --space-5: 64px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-5: 48px;
 
     /* Shadows */
     --shadow-card: 0px 13px 5px rgba(255, 199, 96, 0.01), 0px 7px 4px rgba(255, 204, 109, 0.04), 0px 3px 3px rgba(209, 136, 0, 0.04), 0px 1px 2px rgba(126, 82, 0, 0.04), inset 0px 4px 4px rgba(255, 255, 255, 0.25);
-    --shadow-button: 0px 13px 5px rgba(244, 96, 255, 0.01), 0px 12px 4px rgba(245, 109, 255, 0.04), 0px 6px 16px rgba(195, 0, 209, 0.04), 0px 2px 12px rgba(118, 0, 126, 0.2), inset 0px 4px 4px rgba(255, 255, 255, 0.24);
+    --shadow-button-primary: 0px 13px 5px rgba(244, 96, 255, 0.01), 0px 12px 4px rgba(245, 109, 255, 0.04), 0px 6px 16px rgba(195, 0, 209, 0.04), 0px 2px 12px rgba(118, 0, 126, 0.2), inset 0px 4px 4px rgba(255, 255, 255, 0.24);
+    --shadow-button-alt: 0px 13px 5px rgba(255, 197, 96, 0.01), 0px 7px 4px rgba(255, 201, 109, 0.04), 0px 3px 3px rgba(209, 132, 0, 0.04), 0px 2px 8px rgba(126, 80, 0, 0.4), inset 0px 4px 4px rgba(255, 255, 255, 0.25);
     --shadow-header: 0px 13px 5px rgba(255, 197, 96, 0.01), 0px 7px 4px rgba(255, 201, 109, 0.04), 0px 3px 3px rgba(209, 132, 0, 0.04), 0px 2px 8px rgba(126, 80, 0, 0.4), inset 0px 4px 4px rgba(255, 255, 255, 0.25);
 
     /* Typography */
     --family-title: 'Alice', serif;
     --weight-title: 400;
-    --size-title: 3rem;
+    --size-title: 2rem;
     --line-height-title: 100%;
     --family-body: 'DM Sans', sans-serif;
     --weight-body: 400;
-    --size-body: 1.25rem;
+    --size-body: 1.1rem;
     --line-height-body: 140%;
     --letter-spacing-body: .2px;
     --size-small: .9rem;
-    --size-menu: 14px;
+    --size-menu: 1rem;
+}
+
+@media all and (min-width: 768px) {
+    :root {
+        --space-grid: 32px;
+        --space-1: 8px;
+        --space-2: 16px;
+        --space-3: 32px;
+        --space-4: 48px;
+        --space-5: 64px;
+        --size-title: 3rem;
+        --size-body: 1.25rem;
+        --size-menu: 14px;
+        --padding-card: 40px;
+    }
 }
 
 a {
@@ -132,8 +150,14 @@ body {
     font-family: var(--family-body);
     font-weight: var(--weight-body);
     font-size: var(--size-body);
-    line-height: var(--line-height-body);    
-    padding: var(--space-5) 0;
+    line-height: var(--line-height-body);  
+    padding: 20px 0;  
+}
+
+@media all and (min-width: 768px) {
+    body {
+        padding: var(--space-5) 0;
+    }
 }
 
 p { 
@@ -166,11 +190,11 @@ p {
 
 .page-border-full {
     border: 2px solid white;
-    bottom: 13px;
-    left: 12px;
-    right: 12px;
-    top: 13px;
-    border-radius: var(--radius-card);
+    bottom: 7px;
+    left: 6px;
+    right: 6px;
+    top: 7px;
+    border-radius: calc(var(--radius-card) + 12px);
     z-index: -1;
 }
 
@@ -179,20 +203,41 @@ p {
 }
 
 .page-border-bottom {
-    height: 12px;
-    left: 12px;
-    right: 12px;
+    height: 6px;
+    left: 6px;
+    right: 6px;
     bottom: 0;
     z-index: 2;
 }
 
 .page-border-top {
-    height: 12px;
-    left: 12px;
-    right: 12px;
+    height: 6px;
+    left: 6px;
+    right: 6px;
     top: 0;
     border-radius: 0 0 var(--radius-card) var(--radius-card);
     z-index: 2;
+}
+
+@media all and (min-width: 768px) {
+    .page-border-full {
+        bottom: 13px;
+        left: 12px;
+        right: 12px;
+        top: 13px;
+    }
+
+    .page-border-bottom {
+        height: 12px;
+        left: 12px;
+        right: 12px;
+    }
+
+    .page-border-top {
+        height: 12px;
+        left: 12px;
+        right: 12px;
+    }
 }
 
 .container {
@@ -202,26 +247,39 @@ p {
     margin: auto;
     max-width: var(--container-width);
     padding-bottom: var(--space-4);
-    width: 96%;
+    width: calc(100% - 40px);
 }
 
 .hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: var(--space-4);
-    height: 80vh;
+    gap: var(--space-2);
+}
+
+@media all and (min-width: 768px) {
+    .hero {
+        height: 80vh;
+        gap: var(--space-4);
+    }
 }
 
 .hero-grid {
     border-radius: var(--radius-card);
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: var(--space-2);
-    grid-template-columns: 240px 3fr;
-    grid-template-rows: 1fr;
 }
 
-.header {
+@media all and (min-width: 768px) {
+    .hero-grid {
+        display: grid;
+        grid-template-columns: 240px 3fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+.menu {
     align-items: center;
     background: var(--color-yellow-bright);
     border: 2px solid white;
@@ -231,36 +289,79 @@ p {
     font-size: var(--size-menu);
     justify-content: center;
     margin: 0;
-    padding: 16px 24px;
-    z-index: 1;
+    padding: 12px 16px;
+    z-index: 3;
+}
+
+.menu ul {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    justify-content: center;
+    list-style: none;
+}
+
+.header {
+    border-radius: 26px;
 }
 
 @keyframes headerFadeIn {
-	0% {
-        height: 0;
-		opacity: 0;
-        margin-top: -100px;
-	}
+    0% {
+        opacity: 0;
+        margin-bottom: -100px;
+    }
 
-	75% {
-		opacity: 1;
-        margin-top: 0;
-	}
+    75% {
+        margin-bottom: 0;
+        opacity: 1;
+    }
 }
 
 .header.scrolled {
     animation: headerFadeIn .5s ease 0s 1 normal forwards;
-    left: 50%;
+    bottom: 12px;    
+    left: 12px;
     position: fixed;
-    top: var(--space-3);
-    transform: translateX(-50%);
+    right: 12px;
 }
 
-.header ul {
-    align-items: center;
-    display: flex;
-    gap: var(--space-3);
-    list-style: none;
+@media all and (min-width: 768px) {
+    .menu {
+        position: relative;
+        padding: 16px 24px;
+    }
+
+    .header {
+        border-radius: var(--radius-card);
+    }
+
+    .header ul {
+        display: block;
+        gap: var(--space-3);
+    }
+
+    @keyframes headerFadeIn {
+        0% {
+            height: 0;
+            opacity: 0;
+            margin-top: -100px;
+        }
+
+        75% {
+            opacity: 1;
+            margin-top: 0;
+        }
+    }
+
+    .header.scrolled {
+        animation: headerFadeIn .5s ease 0s 1 normal forwards;
+        left: 50%;
+        position: fixed;
+        top: var(--space-3);
+        transform: translateX(-50%);
+    }
+
 }
 
 .nav-link {
@@ -318,23 +419,41 @@ p {
 }
 
 .card-with-image {
-    align-items: center;
-    display: grid;
-    flex-direction: column-reverse;
-    grid-template-columns: 1fr 240px;
-    grid-template-rows: 1fr;
-    grid-column-gap: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+@media all and (min-width: 768px) {
+    .card-with-image {
+        align-items: center;
+        display: grid;
+        flex-direction: column-reverse;
+        grid-template-columns: 1fr 240px;
+        grid-template-rows: 1fr;
+        grid-column-gap: var(--space-4);
+    }
 }
 
 .card-with-image .card-image {
-    order: 1;
+    order: -1;
 }
 
 .card-with-image .body {
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
-    order: -1;
+    order: 1;
+}
+
+@media all and (min-width: 768px) {
+    .card-with-image .card-image {
+        order: 1;
+    }
+
+    .card-with-image .body {
+        order: -1;
+    }
 }
 
 .card-title {
@@ -352,7 +471,7 @@ p {
 
 .card-image {
     aspect-ratio: 1;
-    box-shadow: 0px 0px 0px 2px #F8F0E1, 0px 0px 0px 4px #2B1D05;
+    box-shadow: 0px 0px 0px 2px var(--color-yellow-bright), 0px 0px 0px 4px var(--color-yellow-soft);
     border-radius: 8px;
     transform: rotate(-2deg);
     display: flex; 
@@ -370,10 +489,7 @@ p {
 
 .button-link {
     align-self: flex-start;
-    background: var(--color-background-button);
-    box-shadow: var(--shadow-button);
     border-radius: var(--radius-card);
-    color: var(--color-foreground-button);
     display: inline-flex;
     padding: var(--padding-button);
     text-decoration: none;
@@ -382,6 +498,18 @@ p {
 
 .button-link:hover {
     transform: scale(1.01) translateY(-1px);
+}
+
+.button-link-primary {
+    background: var(--color-background-button-primary);
+    box-shadow: var(--shadow-button-primary);
+    color: var(--color-foreground-button-primary);
+}
+
+.button-link-alt {
+    background: var(--color-background-button-alt);
+    box-shadow: var(--shadow-button-alt);
+    color: var(--color-foreground-button-alt);
 }
 
 .pill-list {
@@ -432,10 +560,10 @@ p {
                             A Cognitive Behavioural Therapist specialising in the non-pharmacological treatment of Insomnia and other sleep disorders.
                         </p>
                     </div>
-                    <a class="button-link" href="#">Book a free consultation</a>
+                    <a class="button-link button-link-primary" href="#">Book a free consultation</a>
                 </div>
             </div>
-            <header class="header">
+            <header class="menu header">
                 <nav>
                     <ul>
                         <li>
@@ -493,7 +621,7 @@ p {
                     I work in the Sleep and Behavioural Sleep Medicine Department at University College London Hospitals.
                 </p>
                 <div class="mt-1">
-                    <a class="button-link" href="#">See all treatments</a>
+                    <a class="button-link button-link-alt" href="#">See all treatments</a>
                 </div>
             </div>
         </div>
@@ -519,7 +647,7 @@ p {
                     <span class="pill">Non-rem Parasomnias</span>
                 </div>
                 <div class="mt-1">
-                    <a class="button-link" href="#">Read more about sleep issues</a>
+                    <a class="button-link button-link-alt" href="#">Read more about sleep issues</a>
                 </div>
             </div>
         </div>        
@@ -548,7 +676,7 @@ p {
                 </div>
             </div>    
         </div>                           -->
-        <footer class="header">
+        <footer class="menu footer">
             <nav class="footer-nav">
                 <ul>
                     <li>
