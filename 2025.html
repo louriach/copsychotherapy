@@ -240,7 +240,18 @@ p {
     }
 }
 
+@keyframes containerFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .container {
+    animation: containerFadeIn 3s ease 0s 1 normal forwards;
     display: flex;
     flex-direction: column;
     gap: var(--space-grid);
@@ -304,39 +315,34 @@ p {
 
 @media all and (max-width: 768px) {
     .menu ul {
-        flex-wrap: wrap;
+            flex-wrap: wrap;
     }
-}
+    @keyframes headerFadeIn {
+        0%, 50% {
+            opacity: 0;
+            margin-bottom: -100px;
+        }
 
-.header {
-    animation: headerFadeIn .5s ease 0s 1 normal forwards;
-    bottom: 12px;
-    border-radius: 26px;
-    left: 12px;
-    right: 12px;
-    position: fixed;
-    z-index: 4;
-}
-
-@keyframes headerFadeIn {
-    0%, 50% {
-        opacity: 0;
-        margin-bottom: -100px;
+        75% {
+            margin-bottom: 0;
+            opacity: 1;
+        }
     }
 
-    75% {
-        margin-bottom: 0;
-        opacity: 1;
+    .header {
+        animation: headerFadeIn 2s ease 0s 1 normal forwards;
     }
 }
-/*
-.header.scrolled {
-    animation: headerFadeIn .5s ease 0s 1 normal forwards;
-    position: fixed;
-    z-index: 4;
-} */
 
 @media all and (max-width: 768px) {
+    .header {
+        bottom: 12px;
+        border-radius: 26px;
+        left: 12px;
+        right: 12px;
+        position: fixed;
+        z-index: 4;
+    }
     .header.scrolled {
         bottom: 12px;
         left: 12px;
@@ -346,7 +352,6 @@ p {
 
 @media all and (min-width: 768px) {
     .menu {
-        position: relative;
         padding: 16px 24px;
     }
 
@@ -374,6 +379,7 @@ p {
 
     .header.scrolled {
         animation: headerFadeIn .5s ease 0s 1 normal forwards;
+        position: fixed;
         top: var(--space-3);
         transform: translateX(25%);
     }
