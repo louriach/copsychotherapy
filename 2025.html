@@ -218,19 +218,19 @@
 </script>
 
 <script>
+
     let scrollpos = window.scrollY
     const header = document.querySelector("header")
-    // const header_height = header.offsetHeight
     const scrollPosition = '768'
-  
+
     const add_class_on_scroll = () => header.classList.add("scrolled")
     const remove_class_on_scroll = () => header.classList.remove("scrolled")
-  
+
     window.addEventListener('scroll', function() { 
-      scrollpos = window.scrollY;
-  
-      if (scrollpos >= scrollPosition) { add_class_on_scroll() }
-      else { remove_class_on_scroll() }
+    scrollpos = window.scrollY;
+
+    if (scrollpos >= scrollPosition) { add_class_on_scroll() }
+    else { remove_class_on_scroll() }
     })
 
     var sticky = header.offsetTop;
@@ -242,6 +242,8 @@
         header.classList.remove("sticky");
     }
     }  
-  </script>
+
+</script>
 
 </body>
+</html>
