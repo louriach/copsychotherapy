@@ -302,12 +302,24 @@ p {
     list-style: none;
 }
 
+@media all and (max-width: 768px) {
+    .menu ul {
+        flex-wrap: wrap;
+    }
+}
+
 .header {
+    animation: headerFadeIn .5s ease 0s 1 normal forwards;
+    bottom: 12px;
     border-radius: 26px;
+    left: 12px;
+    right: 12px;
+    position: fixed;
+    z-index: 4;
 }
 
 @keyframes headerFadeIn {
-    0% {
+    0%, 50% {
         opacity: 0;
         margin-bottom: -100px;
     }
@@ -317,13 +329,19 @@ p {
         opacity: 1;
     }
 }
-
+/*
 .header.scrolled {
     animation: headerFadeIn .5s ease 0s 1 normal forwards;
-    bottom: 12px;    
-    left: 12px;
     position: fixed;
-    right: 12px;
+    z-index: 4;
+} */
+
+@media all and (max-width: 768px) {
+    .header.scrolled {
+        bottom: 12px;
+        left: 12px;
+        right: 12px;
+    }
 }
 
 @media all and (min-width: 768px) {
@@ -356,10 +374,8 @@ p {
 
     .header.scrolled {
         animation: headerFadeIn .5s ease 0s 1 normal forwards;
-        left: 50%;
-        position: fixed;
         top: var(--space-3);
-        transform: translateX(-50%);
+        transform: translateX(25%);
     }
 
 }
@@ -385,6 +401,10 @@ p {
 .header li:hover .nav-icon {
     fill: var(--purple-strong);
     transform: scale(1.1) rotate(-3deg);
+}
+
+.footer {
+    margin-bottom: 120px;
 }
 
 .footer-nav ul {
@@ -479,6 +499,7 @@ p {
 
 .card-image img {
     border-radius: 8px;
+    width: 100%;
 }
 
 .title {
