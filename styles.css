@@ -390,7 +390,7 @@ figure {
     transition: all ease .25s;
 }
 
-.header li:hover .nav-icon, .nav-link-active .nav-icon {
+.menu li:hover .nav-icon, .nav-link-active .nav-icon {
     fill: var(--purple-strong);
     transform: scale(1.1) rotate(-3deg);
 }
