@@ -377,7 +377,7 @@ li {
     text-decoration: none;
 }
 
-.nav-link:hover {
+.nav-link:hover, .nav-link-active {
     color: var(--purple-strong);
 }
 
@@ -386,7 +386,7 @@ li {
     transition: all ease .25s;
 }
 
-.header li:hover .nav-icon {
+.header li:hover .nav-icon, .nav-link-active .nav-icon {
     fill: var(--purple-strong);
     transform: scale(1.1) rotate(-3deg);
 }
