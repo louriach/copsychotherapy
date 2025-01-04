@@ -84,6 +84,8 @@ body, html {
     --family-title: 'Alice', serif;
     --weight-title: 400;
     --size-title: 2rem;
+    --size-title-secondary: 1.75rem;
+    --size-title-tertiary: 1.5rem;
     --line-height-title: 100%;
     --family-body: 'DM Sans', sans-serif;
     --weight-body: 400;
@@ -133,9 +135,13 @@ body {
     }
 }
 
-p { 
+p, li { 
     color: var(--color-text-secondary);
     letter-spacing: var(--letter-spacing-body);
+}
+
+li {
+    list-style: inside;
 }
 
 .strong {
@@ -283,6 +289,9 @@ p {
     flex-wrap: wrap;
     gap: var(--space-2);
     justify-content: center;
+}
+
+.menu li {
     list-style: none;
 }
 
@@ -438,7 +447,7 @@ p {
     order: -1;
 }
 
-.card-with-image .body {
+.body {
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
@@ -450,17 +459,28 @@ p {
         order: 1;
     }
 
-    .card-with-image .body {
+    .body {
         order: -1;
     }
 }
 
-.card-title {
+.card-title, .card-title-secondary, .card-title-tertiary {
     color: var(--color-yellow-strong);    
     font-family: var(--family-title);
     font-weight: var(--weight-title);
+    line-height: var(--line-height-title);    
+}
+
+.card-title {
     font-size: var(--size-title);
-    line-height: var(--line-height-title);
+}
+
+.card-title-secondary {
+    font-size: var(--size-title-secondary);
+}
+
+.card-title-tertiary {
+    font-size: var(--size-title-tertiary);
 }
 
 .card-grid {
@@ -483,8 +503,15 @@ p {
 
 .title {
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: var(--space-1);    
+}
+
+.text-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
 }
 
 .button-link {
