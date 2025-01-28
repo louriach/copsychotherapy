@@ -367,7 +367,8 @@ figure {
         animation: headerFadeIn .5s ease 0s 1 normal forwards;
         position: fixed;
         top: var(--space-3);
-        transform: translateX(25%);
+        transform: translateX(-50%);
+        left: 50%;
     }
 
 }
